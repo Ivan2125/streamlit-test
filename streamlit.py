@@ -321,7 +321,7 @@ elif tabs == "Modelos":
         centro_longitud = mean(longitudes)
 
         folium_map = folium.Map(
-            location=[np.mean(centro_latitud), np.mean(centro_longitud)], zoom_start=14
+            location=[np.mean(centro_latitud), np.mean(centro_longitud)], zoom_start=8
         )
 
         for tienda in tiendas:
