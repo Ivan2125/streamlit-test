@@ -14,7 +14,6 @@ from sklearn.neighbors import NearestNeighbors
 from statistics import mean
 from st_on_hover_tabs import on_hover_tabs
 from streamlit_folium import folium_static, st_folium
-from config import config
 
 # Organizar las importaciones
 import folium
