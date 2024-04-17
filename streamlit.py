@@ -275,7 +275,7 @@ elif tabs == "Modelos":
     st.header("Modelos de Machine Learning 🤖", divider="rainbow")
     st.header("Recomendación de tiendas Walgreens 🏪")
     st.subheader(
-        "Este apartado te permite encontrar la ubicación de las mejores tiendas de Walgreens basados en su ubicación y reseñas positivas."
+        "🎯 Este apartado te permite encontrar la ubicación de las mejores tiendas de Walgreens basados en su ubicación y reseñas positivas."
     )
     with st.expander(_("¿Cómo usar?")):
         st.markdown(
@@ -467,7 +467,7 @@ elif tabs == "Modelos":
 
     st.header("Recomendación de ubicación de nuevas tiendas 📍")
     st.subheader(
-        "En este apartado al seleccionar un Estado y un Condado dado se muestran 5 ciudades donde se recomienda la instalación de nuevas tiendas de Walgreens según el tamaño del mercado (población y GDP)."
+        "🎯 En este apartado al seleccionar un Estado y un Condado dado se muestran 5 ciudades donde se recomienda la instalación de nuevas tiendas de Walgreens según el tamaño del mercado (población y GDP)."
     )
 
     with st.expander(_("¿Cómo usar?")):
@@ -588,7 +588,7 @@ elif tabs == "Modelos":
 
     st.header("Análisis de reseñas competidores ⚔️")
     st.subheader(
-        "Este apartado te permite seleccionar a Walgreens o uno de sus competidores directos y ver sus reseñas positivas y negativas."
+        "🎯 Este apartado te permite seleccionar a Walgreens o uno de sus competidores directos y ver sus reseñas positivas y negativas."
     )
     with st.expander(_("¿Cómo usar?")):
         st.markdown(
@@ -692,7 +692,7 @@ elif tabs == "Modelos":
     st.divider()
     st.header("Análisis de reseñas por tienda 📝")
     st.subheader(
-        "Este apartado te permite buscar una tienda de Walgreens y ver sus reseñas positivas y negativas."
+        "🎯 Este apartado te permite buscar una tienda de Walgreens y ver sus reseñas positivas y negativas."
     )
     with st.expander(_("¿Cómo usar?")):
         st.markdown(
