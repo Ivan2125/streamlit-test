@@ -100,16 +100,16 @@ if tabs == "Home":
     st.header("Bienvenidos ⭐", divider="rainbow")
 
     intro = """
-            ¡Bienvenido! En esta plataforma, podrás gestionar y administrar de manera efectiva las opiniones de tus clientes. Esta herramienta se convertirá en el centro neurálgico para detectar oportunidades de negocio y mejorar procesos en todos los niveles, desde las tiendas locales hasta los directivos a nivel nacional."""
+            ¡Bienvenido! Esta plataforma te ofrece la capacidad de gestionar y administrar de manera efectiva las opiniones de tus clientes. Se convertirá en el epicentro para detectar oportunidades de negocio y mejorar procesos en todos los niveles, desde las tiendas locales hasta los directivos a nivel nacional. A continuación, te presentamos algunas de las funciones que ofrecemos:"""
 
-    a = "➡️ Analizar las reseñas de Walgreens en Google y Yelp, y obtener una visión general de los sentimientos expresados en ellas."
+    a = "➡️ Análisis de las reseñas: Obtén una visión general de los sentimientos expresados en las reseñas de Walgreens en Google y Yelp mediante un análisis detallado."
     b = "➡️ Ver estadísticas sobre las reseñas, como la distribución de los sentimientos y las palabras más comunes."
     c = "➡️ Explorar las reseñas en detalle, con la capacidad de filtrar por sentimiento y buscar palabras clave."
     d = "➡️ Dashboard de control que permite una visualización que facilita el monitoreo del negocio basados en las plataformas Google y Yelp."
 
     st.markdown(f'<h3 style="text-align: left;">{intro}</h3>', unsafe_allow_html=True)
     st.markdown(
-        f'<h3 style="text-align: left; font-size: 23px;">{a}</h3>',
+        f'<h3 style="text-align: justify; font-size: 23px;">{a}</h3>',
         unsafe_allow_html=True,
     )
     st.markdown(
