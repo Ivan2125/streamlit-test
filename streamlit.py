@@ -127,10 +127,7 @@ if tabs == "Home":
     st.divider()
     ## Nuestra información
     st.header("Desarrollado por ⚙️ ", divider="rainbow")
-    st.markdown(
-        f'<div style="display: flex; justify-content: center; align-items: center;"><img src="data:image/png;base64,{b64_1}" style="margin-right: 10px; width: 300px; height: 300px;" /></div>',
-        unsafe_allow_html=True,
-    )
+
     personas = [
         {
             "nombre": "Florencia Lascurain",
@@ -206,6 +203,10 @@ if tabs == "Home":
                 f'<div style="display: flex; justify-content: center;"><a href="{persona["linkedin"]}"><img src="data:image/png;base64,{linkedin_logo}" alt="LinkedIn" width="50"/></a><a href="{persona["github"]}"><img src="data:image/png;base64,{github_logo}" alt="GitHub" width="40"/></a></div>',
                 unsafe_allow_html=True,
             )
+    st.markdown(
+        f'<div style="display: flex; justify-content: center; align-items: center;"><img src="data:image/png;base64,{b64_1}" style="margin-right: 10px; width: 300px; height: 300px;" /></div>',
+        unsafe_allow_html=True,
+    )
 
 elif tabs == "Dashboard":
 
