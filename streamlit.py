@@ -107,8 +107,9 @@ if tabs == "Home":
     c = "➡️ Visualización de estadísticas sobre las reseñas: Accede a estadísticas detalladas, incluyendo la distribución de sentimientos y las palabras más frecuentes utilizadas en las reseñas."
     d = "➡️ Exploración de reseñas en detalle: Explora las reseñas en profundidad, con la capacidad de filtrar por sentimiento y buscar palabras clave para obtener información específica."
     e = "➡️ Reubicación de tiendas: Analiza reubicaciones de tiendas basada en análisis de mercado y densidad poblacional para mejorar  y optimizar el rendimiento empresarial"
-    st.divider()
+
     st.markdown(f'<h3 style="text-align: left;">{intro}</h3>', unsafe_allow_html=True)
+    st.divider()
     st.markdown(
         f'<h3 style="text-align: justify; font-size: 23px;">{a}</h3>',
         unsafe_allow_html=True,
