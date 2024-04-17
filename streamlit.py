@@ -272,7 +272,7 @@ elif tabs == "Dashboard":
 
 elif tabs == "Modelos":
 
-    st.tittle("Modelos de Machine Learning 🤖", divider="rainbow")
+    st.title("Modelos de Machine Learning 🤖", divider="rainbow")
     st.header("Recomendación de tiendas Walgreens 🏪")
     st.subheader(
         "Este apartado te permite encontrar la ubicación de las mejores tiendas de Walgreens basados en su ubicación y reseñas positivas."
