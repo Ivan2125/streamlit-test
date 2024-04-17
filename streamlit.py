@@ -14,9 +14,11 @@ from sklearn.neighbors import NearestNeighbors
 from statistics import mean
 from st_on_hover_tabs import on_hover_tabs
 from streamlit_folium import folium_static, st_folium
+from config import config
 
 # Organizar las importaciones
 import folium
+
 
 # Evitar la descarga de paquetes NLTK en cada ejecución
 nltk_packages = ["punkt", "wordnet", "stopwords"]
@@ -277,9 +279,6 @@ elif tabs == "Modelos":
 
     def obtener_coordenadas(ciudad):
         try:
-            # Lee la clave de API desde el archivo config.json
-            with open("secrets/creds-cris.json") as f:
-                config = json.load(f)
 
             api_key = config["GOOGLE_API_KEY"]
             url = f"https://maps.googleapis.com/maps/api/geocode/json?address={ciudad}&key={st.secrets(api_key)}"
