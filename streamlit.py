@@ -280,8 +280,8 @@ elif tabs == "Modelos":
     def obtener_coordenadas(ciudad):
         try:
 
-            api_key = config["GOOGLE_API_KEY"]
-            url = f"https://maps.googleapis.com/maps/api/geocode/json?address={ciudad}&key={st.secrets(api_key)}"
+            api_key = st.secrets["GOOGLE_API_KEY"]
+            url = f"https://maps.googleapis.com/maps/api/geocode/json?address={ciudad}&key={api_key}"
             response = requests.get(url)
             data = response.json()
 
