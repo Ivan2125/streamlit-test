@@ -31,7 +31,7 @@ for package in nltk_packages:
 st.set_page_config(
     layout="wide",
     page_title="Análisis de Sentimientos de Reviews de Walgreens en Google y Yelp",
-    page_icon="data/W_logo.png",
+    page_icon="images/W_logo.png",
     initial_sidebar_state="expanded",
 )
 
