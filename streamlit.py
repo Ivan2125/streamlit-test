@@ -31,7 +31,7 @@ for package in nltk_packages:
 st.set_page_config(
     layout="wide",
     page_title="Análisis de Sentimientos de Reviews de Walgreens en Google y Yelp",
-    page_icon="star",
+    page_icon="data/W_logo.png",
     initial_sidebar_state="expanded",
 )
 
@@ -97,7 +97,7 @@ if tabs == "Home":
         unsafe_allow_html=True,
     )
 
-    st.header("Bienvenidos ⭐", divider="rainbow")
+    st.header("Introducción ⭐", divider="rainbow")
 
     intro = """
             ¡Bienvenido! Esta plataforma te ofrece la capacidad de gestionar y administrar de manera efectiva las opiniones de tus clientes. Se convertirá en el epicentro para detectar oportunidades de negocio y mejorar procesos en todos los niveles, desde las tiendas locales hasta los directivos a nivel nacional. A continuación, te presentamos algunas de las funciones que ofrecemos:"""
