@@ -616,7 +616,7 @@ elif tabs == "Modelos":
             sentiment_value = st.radio(
                 "Sentimiento",
                 ["Positivo", "Negativo"],
-                help="Positivo: busca las reseñas positivas\n\nNegativo: busca las reseñas positivas",
+                help="Positivo: busca las reseñas positivas\n\nNegativo: busca las reseñas negativas",
                 key="unique_key",
             )
 
@@ -721,7 +721,7 @@ elif tabs == "Modelos":
             sentiment_value = st.radio(
                 "Sentimiento",
                 ["Positivo", "Negativo"],
-                help="Positivo: busca las reseñas positivas\n\nNegativo: busca las reseñas positivas",
+                help="Positivo: busca las reseñas positivas\n\nNegativo: busca las reseñas negativas",
                 key="unique_key2",
             )
 
