@@ -272,15 +272,15 @@ elif tabs == "Dashboard":
 
 elif tabs == "Modelos":
 
-    st.header("Modelos de Machine Learning 🤖", divider="rainbow")
-    st.title("Recomendación de tiendas Walgreens 🏪")
-
+    st.tittle("Modelos de Machine Learning 🤖", divider="rainbow")
+    st.header("Recomendación de tiendas Walgreens 🏪")
+    st.subheader(
+        "Este apartado te permite encontrar la ubicación de las mejores tiendas de Walgreens basados en su ubicación y reseñas positivas."
+    )
     with st.expander(_("¿Cómo usar?")):
         st.markdown(
             _(
                 """
-        Este apartado te permite encontrar la ubicación de las mejores tiendas de Walgreens basados en su ubicación y reseñas positivas.
-
         Ejemplo de uso:
         - Ingresa el nombre de la ciudad, ejemplo: "Los Angeles".
         - Da click en el botón "Enviar".
@@ -465,13 +465,15 @@ elif tabs == "Modelos":
 
     st.divider()
 
-    st.title("Recomendación de nuevas tiendas 📍")
+    st.header("Recomendación de ubicación de nuevas tiendas 📍")
+    st.subheader(
+        "En este apartado al seleccionar un Estado y un Condado dado se muestran 5 ciudades donde se recomienda la instalación de nuevas tiendas de Walgreens según el tamaño del mercado (población y GDP)."
+    )
+
     with st.expander(_("¿Cómo usar?")):
         st.markdown(
             _(
                 """
-        Este apartado te permite seleccionar la ciudad y el condado para la obtención de la presencia de Walgreens en dichos lugares.
-
         Ejemplo de uso:
         - Despliega el **Estado** y selecciona "Texas".
         - Ahora despliega el **Condado** y selecciona "Parker".
@@ -584,13 +586,14 @@ elif tabs == "Modelos":
 
     st.divider()
 
-    st.title("Análisis de reseñas competidores ⚔️")
+    st.header("Análisis de reseñas competidores ⚔️")
+    st.subheader(
+        "Este apartado te permite seleccionar a Walgreens o uno de sus competidores directos y ver sus reseñas positivas y negativas."
+    )
     with st.expander(_("¿Cómo usar?")):
         st.markdown(
             _(
                 """
-        Este apartado te permite seleccionar uno de los competidores directos del Walgreens y ver sus reseñas positivas y negativas.
-
         Ejemplo de uso:
         - Despliega el **Negocio** y selecciona "7-Eleven".
         - Ahora selecciona el **Sentimiento**: "Positivo" o "Negativo".
@@ -687,13 +690,14 @@ elif tabs == "Modelos":
         return results
 
     st.divider()
-    st.title("Análisis de reseñas por tienda 📝")
+    st.header("Análisis de reseñas por tienda 📝")
+    st.subheader(
+        "Este apartado te permite buscar una tienda de Walgreens y ver sus reseñas positivas y negativas."
+    )
     with st.expander(_("¿Cómo usar?")):
         st.markdown(
             _(
                 """
-        Este apartado te permite buscar una tienda de Walgreens y ver sus reseñas positivas y negativas.
-
         Ejemplo de uso:
         - Ingresa el **gmap_id** de la tienda, ejemplo: "0x80dca8a2029b54bd:0x808bdccd50742c41".
         - Ahora selecciona el **Sentimiento**: "Positivo" o "Negativo".
