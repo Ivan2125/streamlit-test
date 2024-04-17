@@ -147,7 +147,7 @@ if tabs == "Home":
             "profesion": "Machine Learning Engineer",
             "github": "https://github.com/Facundo022",
             "linkedin": "https://www.linkedin.com/in/facundo-nicolas-denis-60933b199/",
-            "imagen_link": "images/image1.png",
+            "imagen_link": "images/Facu.png",
         },
         {
             "nombre": "Cristhian Huanqui",
