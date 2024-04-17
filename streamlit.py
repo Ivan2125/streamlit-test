@@ -102,10 +102,11 @@ if tabs == "Home":
     intro = """
             ¡Bienvenido! Esta plataforma te ofrece la capacidad de gestionar y administrar de manera efectiva las opiniones de tus clientes. Se convertirá en el epicentro para detectar oportunidades de negocio y mejorar procesos en todos los niveles, desde las tiendas locales hasta los directivos a nivel nacional. A continuación, te presentamos algunas de las funciones que ofrecemos:"""
 
-    a = "➡️ Análisis de las reseñas: Obtén una visión general de los sentimientos expresados en las reseñas de Walgreens en Google y Yelp mediante un análisis detallado."
-    b = "➡️ Ver estadísticas sobre las reseñas, como la distribución de los sentimientos y las palabras más comunes."
-    c = "➡️ Explorar las reseñas en detalle, con la capacidad de filtrar por sentimiento y buscar palabras clave."
-    d = "➡️ Dashboard de control que permite una visualización que facilita el monitoreo del negocio basados en las plataformas Google y Yelp."
+    a = "➡️ Dashboard de Control: Este panel de control proporciona una visualización intuitiva que simplifica el seguimiento del desempeño del negocio basado en las plataformas Google y Yelp."
+    b = "➡️ Análisis de las reseñas: Obtén una visión general de los sentimientos expresados en las reseñas de Walgreens en Google y Yelp mediante un análisis detallado."
+    c = "➡️ Visualización de estadísticas sobre las reseñas: Accede a estadísticas detalladas, incluyendo la distribución de sentimientos y las palabras más frecuentes utilizadas en las reseñas."
+    d = "➡️ Exploración de reseñas en detalle: Explora las reseñas en profundidad, con la capacidad de filtrar por sentimiento y buscar palabras clave para obtener información específica."
+    e = "➡️ Reubicación de tiendas: Analiza reubicaciones de tiendas basada en análisis de mercado y densidad poblacional para mejorar  y optimizar el rendimiento empresarial"
 
     st.markdown(f'<h3 style="text-align: left;">{intro}</h3>', unsafe_allow_html=True)
     st.markdown(
@@ -124,6 +125,11 @@ if tabs == "Home":
         f'<h3 style="text-align: left; font-size: 23px;">{d}</h3>',
         unsafe_allow_html=True,
     )
+    st.markdown(
+        f'<h3 style="text-align: left; font-size: 23px;">{e}</h3>',
+        unsafe_allow_html=True,
+    )
+
     st.divider()
     ## Nuestra información
     st.header("Desarrollado por ⚙️ ", divider="rainbow")
