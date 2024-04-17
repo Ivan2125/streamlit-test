@@ -280,8 +280,9 @@ elif tabs == "Modelos":
             # Lee la clave de API desde el archivo config.json
             with open("secrets/creds-cris.json") as f:
                 config = json.load(f)
+
             api_key = config["GOOGLE_API_KEY"]
-            url = f"https://maps.googleapis.com/maps/api/geocode/json?address={ciudad}&key={api_key}"
+            url = f"https://maps.googleapis.com/maps/api/geocode/json?address={ciudad}&key={st.secrets(api_key)}"
             response = requests.get(url)
             data = response.json()
 
