@@ -93,14 +93,14 @@ if tabs == "Home":
     # Display the images
     # Display the images
     st.markdown(
-        f'<div style="display: flex; justify-content: center; align-items: center;"><img src="data:image/png;base64,{b64_1}" style="margin-right: 10px; width: 300px; height: 300px;" /><img src="data:image/png;base64,{b64_2}" style="margin-left: 100px; width: 600px; height: 200px;" /></div>',
+        f'<div style="display: flex; justify-content: center; align-items: center;"><img src="data:image/png;base64,{b64_2}" style="margin-left: 100px; width: 600px; height: 200px;" /></div>',
         unsafe_allow_html=True,
     )
 
     st.header("Bienvenidos ⭐", divider="rainbow")
 
     intro = """
-            Hola, en esta plataforma podrás gestionar y administrar de manera útil y práctica las opiniones de los clientes. Esta herramienta servirá como punto central para detectar oportunidades de negocio y mejorar procesos en todos los niveles, desde las tiendas locales hasta los directivos a nivel global."""
+            ¡Bienvenido! En esta plataforma, podrás gestionar y administrar de manera efectiva las opiniones de tus clientes. Esta herramienta se convertirá en el centro neurálgico para detectar oportunidades de negocio y mejorar procesos en todos los niveles, desde las tiendas locales hasta los directivos a nivel nacional."""
 
     a = "➡️ Analizar las reseñas de Walgreens en Google y Yelp, y obtener una visión general de los sentimientos expresados en ellas."
     b = "➡️ Ver estadísticas sobre las reseñas, como la distribución de los sentimientos y las palabras más comunes."
@@ -127,7 +127,10 @@ if tabs == "Home":
     st.divider()
     ## Nuestra información
     st.header("Desarrollado por ⚙️ ", divider="rainbow")
-
+    st.markdown(
+        f'<div style="display: flex; justify-content: center; align-items: center;"><img src="data:image/png;base64,{b64_1}" style="margin-right: 10px; width: 300px; height: 300px;" /></div>',
+        unsafe_allow_html=True,
+    )
     personas = [
         {
             "nombre": "Florencia Lascurain",
