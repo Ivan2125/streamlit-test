@@ -207,7 +207,7 @@ if tabs == "Home":
 
             # Display the logos in a div
             st.markdown(
-                f'<div style="display: flex; justify-content: center;"><a href="{persona["linkedin"]}"><img src="data:image/png;base64,{linkedin_logo}" alt="LinkedIn" width="50"/></a><a href="{persona["github"]}"><img src="data:image/png;base64,{github_logo}" alt="GitHub" width="40"/></a></div>',
+                f'<div style="display: flex; justify-content: center;"><a href="{persona["linkedin"]}"><img src="data:image/png;base64,{linkedin_logo}" alt="LinkedIn" width="40"/></a><a href="{persona["github"]}"><img src="data:image/png;base64,{github_logo}" alt="GitHub" width="40"/></a></div>',
                 unsafe_allow_html=True,
             )
 
