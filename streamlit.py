@@ -378,7 +378,6 @@ elif tabs == "Modelos":
         lc_long = st.session_state.lon
 
         with st.form(key="my_form"):
-            ciudad = st.text_input("Ingrese el nombre de la ciudad:")
             rating = st.selectbox(
                 "Seleccione el rating:",
                 ["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"],
@@ -397,24 +396,21 @@ elif tabs == "Modelos":
             else:
                 rating = 5
 
-            # st.write(f"Ciudad ingresada: {ciudad}")
             st.write(f"Rating seleccionado: {rating}")
 
-        if ciudad:
             try:
                 ruta_unificado_reviews = "data/unificado_reviews.parquet"
                 unificado_reviews = pd.read_parquet(ruta_unificado_reviews)
 
                 latitud, longitud = st.session_state.lat, st.session_state.lon
 
-                df_ciudad = unificado_reviews[unificado_reviews["city"] == ciudad]
-                df_walgreens = df_ciudad[
-                    (df_ciudad["business_name"] == "Walgreens")
-                    & (df_ciudad["rating"] == rating)
+                df_walgreens = unificado_reviews[
+                    (unificado_reviews["business_name"] == "Walgreens")
+                    & (unificado_reviews["rating"] == rating)
                 ]
                 if df_walgreens.empty:
                     raise ValueError(
-                        f"No se encontraron tiendas Walgreens con rating {rating} en la ciudad {ciudad}."
+                        f"No se encontraron tiendas Walgreens con rating {rating}."
                     )
                 df_walgreens = df_walgreens.sort_values(by="rating", ascending=False)
                 df_walgreens = df_walgreens.drop_duplicates(subset="gmap_id")
@@ -425,7 +421,6 @@ elif tabs == "Modelos":
                 )
                 knn_model.fit(X)
 
-                latitud_referencia, longitud_referencia = obtener_coordenadas(ciudad)
                 distancias, indices = knn_model.kneighbors(
                     pd.DataFrame(
                         [[latitud, longitud]],
@@ -452,7 +447,7 @@ elif tabs == "Modelos":
                 with tab2:
                     st.dataframe(df_tiendas_recomendadas)
                 with tab1:
-                    mostrar_mapa(ciudad, tiendas_dict)
+                    mostrar_mapa(tiendas_dict)
             except Exception as e:
                 st.error(f"Error: {e}")
 
