@@ -425,7 +425,7 @@ elif tabs == "Modelos":
 
                 df_tiendas_recomendadas = pd.DataFrame(tiendas_dict)
 
-                tab1, tab2 = st.columns(2, gap="medium")
+                tab1, tab2 = st.columns(2, gap="small")
                 # Mostrar el DataFrame en Streamlit
                 with tab2:
                     st.dataframe(df_tiendas_recomendadas)
