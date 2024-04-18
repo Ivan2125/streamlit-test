@@ -428,7 +428,7 @@ elif tabs == "Modelos":
                 latitud_referencia, longitud_referencia = obtener_coordenadas(ciudad)
                 distancias, indices = knn_model.kneighbors(
                     pd.DataFrame(
-                        [[latitud_referencia, longitud_referencia]],
+                        [[latitud, longitud]],
                         columns=["latitude", "longitude"],
                     )
                 )
