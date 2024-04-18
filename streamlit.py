@@ -427,10 +427,10 @@ elif tabs == "Modelos":
 
                 tab1, tab2 = st.columns(2, gap="medium")
                 # Mostrar el DataFrame en Streamlit
-                if tab2:
-                    tab2.st.dataframe(df_tiendas_recomendadas)
-                if tab1:
-                    tab1.mostrar_mapa(ciudad, tiendas_dict)
+                with tab2:
+                    st.dataframe(df_tiendas_recomendadas)
+                with tab1:
+                    mostrar_mapa(ciudad, tiendas_dict)
             except Exception as e:
                 st.error(f"Error: {e}")
 
