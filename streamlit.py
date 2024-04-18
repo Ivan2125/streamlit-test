@@ -421,6 +421,11 @@ elif tabs == "Modelos":
                     }
                     tiendas_dict.append(tienda_info)
 
+                df_tiendas_recomendadas = pd.DataFrame(tiendas_dict)
+
+                # Mostrar el DataFrame en Streamlit
+                st.dataframe(df_tiendas_recomendadas)
+
                 mostrar_mapa(ciudad, tiendas_dict)
             except Exception as e:
                 st.error(f"Error: {e}")
