@@ -428,9 +428,9 @@ elif tabs == "Modelos":
                 tab1, tab2 = st.columns(2, gap="medium")
                 # Mostrar el DataFrame en Streamlit
                 if tab2:
-                    st.dataframe(df_tiendas_recomendadas)
+                    tab2.st.dataframe(df_tiendas_recomendadas)
                 if tab1:
-                    mostrar_mapa(ciudad, tiendas_dict)
+                    tab1.mostrar_mapa(ciudad, tiendas_dict)
             except Exception as e:
                 st.error(f"Error: {e}")
 
