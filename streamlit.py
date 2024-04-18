@@ -354,7 +354,7 @@ elif tabs == "Modelos":
         folium_static(folium_map)
 
     def app():
-
+        tab1, tab2 = st.columns(2, gap="medium")
         with st.form(key="my_form"):
             ciudad = st.text_input("Ingrese el nombre de la ciudad:")
             rating = st.selectbox(
@@ -426,9 +426,10 @@ elif tabs == "Modelos":
                 df_tiendas_recomendadas = pd.DataFrame(tiendas_dict)
 
                 # Mostrar el DataFrame en Streamlit
-                st.dataframe(df_tiendas_recomendadas)
-
-                mostrar_mapa(ciudad, tiendas_dict)
+                if tab2:
+                    st.dataframe(df_tiendas_recomendadas)
+                if tab1:
+                    mostrar_mapa(ciudad, tiendas_dict)
             except Exception as e:
                 st.error(f"Error: {e}")
 
