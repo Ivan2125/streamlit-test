@@ -343,7 +343,7 @@ elif tabs == "Modelos":
         )
 
         for tienda in tiendas:
-            popup_text = f"**Rating**: {tienda['rating']}<br>**Review**: {tienda['review']}<br>**gmap_id**: {tienda['gmap_id']}"
+            popup_text = f"Rating: {tienda['rating']}<br>Review: {tienda['review']}<br>gmap_id: {tienda['gmap_id']}"
             folium.Marker(
                 location=[tienda["latitude"], tienda["longitude"]],
                 popup=folium.Popup(
