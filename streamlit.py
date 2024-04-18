@@ -357,10 +357,12 @@ elif tabs == "Modelos":
 
         with st.form(key="my_form"):
             ciudad = st.text_input("Ingrese el nombre de la ciudad:")
+            rating = st.selectbox("Seleccione el rating:", [1, 2, 3, 4, 5])
             submit_button = st.form_submit_button(label="Enviar")
 
         if submit_button:
             st.write(f"Ciudad ingresada: {ciudad}")
+            st.write(f"Rating seleccionado: {rating}")
         if ciudad:
             try:
                 ruta_unificado_reviews = "data/unificado_reviews.parquet"
@@ -371,12 +373,11 @@ elif tabs == "Modelos":
                 df_ciudad = unificado_reviews[unificado_reviews["city"] == ciudad]
                 df_walgreens = df_ciudad[
                     (df_ciudad["business_name"] == "Walgreens")
-                    & (df_ciudad["rating"] >= 3)
-                    & (df_ciudad["rating"] <= 5)
+                    & (df_ciudad["rating"] == rating)
                 ]
                 if df_walgreens.empty:
                     raise ValueError(
-                        f"No se encontraron tiendas Walgreens con rating entre 3 y 5 en la ciudad {ciudad}."
+                        f"No se encontraron tiendas Walgreens con rating {rating} en la ciudad {ciudad}."
                     )
                 df_walgreens = df_walgreens.sort_values(by="rating", ascending=False)
                 df_walgreens = df_walgreens.drop_duplicates(subset="gmap_id")
@@ -384,7 +385,6 @@ elif tabs == "Modelos":
                 knn_model = NearestNeighbors(n_neighbors=5, algorithm="ball_tree")
                 knn_model.fit(X)
 
-                # Cuando hagas la predicción, asegúrate de que los datos tengan los mismos nombres de características
                 latitud_referencia, longitud_referencia = obtener_coordenadas(ciudad)
                 distancias, indices = knn_model.kneighbors(
                     pd.DataFrame(
