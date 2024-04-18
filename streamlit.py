@@ -357,12 +357,22 @@ elif tabs == "Modelos":
 
         with st.form(key="my_form"):
             ciudad = st.text_input("Ingrese el nombre de la ciudad:")
-            rating = st.selectbox("Seleccione el rating:", [1, 2, 3, 4, 5])
+            rating = st.selectbox(
+                "Seleccione el rating:",
+                options=[
+                    ("⭐", 1),
+                    ("⭐⭐", 2),
+                    ("⭐⭐⭐", 3),
+                    ("⭐⭐⭐⭐", 4),
+                    ("⭐⭐⭐⭐⭐", 5),
+                ],
+                format_func=lambda x: x[0],
+            )
             submit_button = st.form_submit_button(label="Enviar")
 
         if submit_button:
             st.write(f"Ciudad ingresada: {ciudad}")
-            st.write(f"Rating seleccionado: {rating}")
+            st.write(f"Rating seleccionado: {rating[1]}")
         if ciudad:
             try:
                 ruta_unificado_reviews = "data/unificado_reviews.parquet"
