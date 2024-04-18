@@ -354,6 +354,28 @@ elif tabs == "Modelos":
         folium_static(folium_map)
 
     def app():
+        st.header("Hace doble click en el mapa")
+        default_lat, default_lon = (38, -97)
+        # Initialize session state variables
+        if "lat" not in st.session_state:
+            st.session_state.lat = default_lat
+        if "lon" not in st.session_state:
+            st.session_state.lon = default_lon
+        m = folium.Map(
+            location=[st.session_state.lat, st.session_state.lon], zoom_start=4
+        )
+        folium.Marker([st.session_state.lat, st.session_state.lon]).add_to(m)
+
+        st_data = st_folium(m, width=600, height=350)
+
+        try:
+            st.session_state.lat = st_data["last_clicked"]["lat"]
+            st.session_state.lon = st_data["last_clicked"]["lng"]
+        except:
+            print("mistake")
+
+        lc_lat = st.session_state.lat
+        lc_long = st.session_state.lon
 
         with st.form(key="my_form"):
             ciudad = st.text_input("Ingrese el nombre de la ciudad:")
@@ -383,7 +405,7 @@ elif tabs == "Modelos":
                 ruta_unificado_reviews = "data/unificado_reviews.parquet"
                 unificado_reviews = pd.read_parquet(ruta_unificado_reviews)
 
-                latitud, longitud = obtener_coordenadas(ciudad)
+                latitud, longitud = st.session_state.lat, st.session_state.lon
 
                 df_ciudad = unificado_reviews[unificado_reviews["city"] == ciudad]
                 df_walgreens = df_ciudad[
