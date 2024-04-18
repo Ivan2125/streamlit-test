@@ -269,10 +269,9 @@ elif tabs == "Dashboard":
             </script>"""
     components.html(
         embed_code,
-        height=2000,
+        height=1000,
         width=1709,
     )
-    st.header("Dashboard \U0001F4CA", divider="rainbow", anchor=False)
 
     st.header("📈 Walgreens vs. competencia | Análisis de rendimiento:")
     st.subheader(
