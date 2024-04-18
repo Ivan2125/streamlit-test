@@ -347,7 +347,7 @@ elif tabs == "Modelos":
             folium.Marker(
                 location=[tienda["latitude"], tienda["longitude"]],
                 popup=folium.Popup(
-                    popup_text, max_width=300
+                    popup_text, max_width=400
                 ),  # Aquí ajustamos el tamaño máximo del popup
             ).add_to(folium_map)
 
