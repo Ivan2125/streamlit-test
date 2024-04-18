@@ -332,23 +332,27 @@ elif tabs == "Modelos":
         except KeyError as e:
             raise ValueError("Respuesta inesperada de la API de Google Maps.")
 
-    def mostrar_mapa(ciudad, tiendas):
+    def mostrar_mapa(tiendas):
         latitudes = [tienda["latitude"] for tienda in tiendas]
         longitudes = [tienda["longitude"] for tienda in tiendas]
         centro_latitud = mean(latitudes)
         centro_longitud = mean(longitudes)
 
-        folium_map = folium.Map(
-            location=[np.mean(centro_latitud), np.mean(centro_longitud)], zoom_start=10
-        )
+        # Calcular los límites del mapa
+        min_lat, max_lat = min(latitudes), max(latitudes)
+        min_lon, max_lon = min(longitudes), max(longitudes)
+
+        # Crear el mapa centrado en el centro de los datos
+        folium_map = folium.Map(location=[centro_latitud, centro_longitud])
+
+        # Ajustar los límites del mapa a los datos
+        folium_map.fit_bounds([[min_lat, min_lon], [max_lat, max_lon]])
 
         for tienda in tiendas:
             popup_text = f"Rating: {tienda['rating']}<br>Review: {tienda['review']}<br>gmap_id: {tienda['gmap_id']}"
             folium.Marker(
                 location=[tienda["latitude"], tienda["longitude"]],
-                popup=folium.Popup(
-                    popup_text, max_width=400
-                ),  # Aquí ajustamos el tamaño máximo del popup
+                popup=folium.Popup(popup_text, max_width=400),
             ).add_to(folium_map)
 
         folium_static(folium_map)
