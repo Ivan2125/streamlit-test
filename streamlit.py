@@ -398,9 +398,7 @@ elif tabs == "Modelos":
                 df_walgreens = df_walgreens.drop_duplicates(subset="gmap_id")
                 df_walgreens = df_walgreens.head(5)
                 X = df_walgreens[["latitude", "longitude"]]
-                knn_model = NearestNeighbors(
-                    n_neighbors=min(5, len(X), algorithm="ball_tree")
-                )
+                knn_model = NearestNeighbors(n_neighbors=5, algorithm="ball_tree")
                 knn_model.fit(X)
 
                 latitud_referencia, longitud_referencia = obtener_coordenadas(ciudad)
