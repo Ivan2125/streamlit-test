@@ -396,6 +396,7 @@ elif tabs == "Modelos":
                     )
                 df_walgreens = df_walgreens.sort_values(by="rating", ascending=False)
                 df_walgreens = df_walgreens.drop_duplicates(subset="gmap_id")
+                df_walgreens = df_walgreens.head(5)
                 X = df_walgreens[["latitude", "longitude"]]
                 knn_model = NearestNeighbors(n_neighbors=5, algorithm="ball_tree")
                 knn_model.fit(X)
