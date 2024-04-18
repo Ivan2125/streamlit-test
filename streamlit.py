@@ -397,7 +397,7 @@ elif tabs == "Modelos":
             else:
                 rating = 5
 
-            st.write(f"Ciudad ingresada: {ciudad}")
+            # st.write(f"Ciudad ingresada: {ciudad}")
             st.write(f"Rating seleccionado: {rating}")
 
         if ciudad:
