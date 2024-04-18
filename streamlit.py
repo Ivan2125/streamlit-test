@@ -307,31 +307,6 @@ elif tabs == "Modelos":
             )
         )
 
-    def obtener_coordenadas(ciudad):
-        try:
-
-            api_key = st.secrets["GOOGLE_API_KEY"]
-            url = f"https://maps.googleapis.com/maps/api/geocode/json?address={ciudad}&key={api_key}"
-            response = requests.get(url)
-            data = response.json()
-
-            if data["status"] == "OK":
-                latitud = data["results"][0]["geometry"]["location"]["lat"]
-                longitud = data["results"][0]["geometry"]["location"]["lng"]
-                return latitud, longitud
-            elif data["status"] == "ZERO_RESULTS":
-                raise ValueError(
-                    f"No se encontraron resultados para la ciudad {ciudad}."
-                )
-            else:
-                raise ValueError(
-                    f"No se pudieron obtener las coordenadas para la ciudad {ciudad}."
-                )
-        except requests.exceptions.RequestException as e:
-            raise ValueError("Error al conectar con la API de Google Maps.")
-        except KeyError as e:
-            raise ValueError("Respuesta inesperada de la API de Google Maps.")
-
     def mostrar_mapa(tiendas):
         latitudes = [tienda["latitude"] for tienda in tiendas]
         longitudes = [tienda["longitude"] for tienda in tiendas]
