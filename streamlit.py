@@ -300,7 +300,8 @@ elif tabs == "Modelos":
             _(
                 """
         Ejemplo de uso:
-        - Ingresa el nombre de la ciudad, ejemplo: "Los Angeles".
+        - Haz doble click en el mapa
+        -Ingresa el nombre de la ciudad, ejemplo: "Los Angeles".
         - Da click en el botón "Enviar".
         - Visualiza las ubicaciones de las mejores tiendas de Walgreens.
         """
@@ -330,11 +331,11 @@ elif tabs == "Modelos":
                 popup=folium.Popup(popup_text, max_width=400),
             ).add_to(folium_map)
 
-        folium_static(folium_map)
+        folium_static(folium_map, width=600, height=350)
 
     def app():
+        st.header("Haz doble click en el mapa")
         tab1, tab2, tab3 = st.columns(3, gap="small")
-        st.header("Hace doble click en el mapa")
         default_lat, default_lon = (38, -97)
         with tab1:
             # Initialize session state variables
@@ -343,7 +344,7 @@ elif tabs == "Modelos":
             if "lon" not in st.session_state:
                 st.session_state.lon = default_lon
             m = folium.Map(
-                location=[st.session_state.lat, st.session_state.lon], zoom_start=10
+                location=[st.session_state.lat, st.session_state.lon], zoom_start=8
             )
             folium.Marker([st.session_state.lat, st.session_state.lon]).add_to(m)
 
@@ -424,8 +425,8 @@ elif tabs == "Modelos":
                 df_tiendas_recomendadas = pd.DataFrame(tiendas_dict)
 
                 # Mostrar el DataFrame en Streamlit
-                with tab3:
-                    st.dataframe(df_tiendas_recomendadas)
+
+                st.dataframe(df_tiendas_recomendadas)
                 with tab2:
                     mostrar_mapa(tiendas_dict)
             except Exception as e:
