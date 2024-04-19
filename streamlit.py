@@ -424,9 +424,14 @@ elif tabs == "Modelos":
 
                 df_tiendas_recomendadas = pd.DataFrame(tiendas_dict)
 
+                if "map" not in st.session_state or st.session_state.new_query:
+                    st.session_state.map = mostrar_mapa(tiendas_dict)
+                    st.session_state.new_query = False
                 # Mostrar el DataFrame en Streamlit
-
                 st.dataframe(df_tiendas_recomendadas)
+
+                with tab1:
+                    folium_static(st.session_state.map)
                 with tab2:
                     mostrar_mapa(tiendas_dict)
             except Exception as e:
