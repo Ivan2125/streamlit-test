@@ -333,28 +333,30 @@ elif tabs == "Modelos":
         folium_static(folium_map)
 
     def app():
+        tab1, tab2, tab3 = st.columns(3, gap="small")
         st.header("Hace doble click en el mapa")
         default_lat, default_lon = (38, -97)
-        # Initialize session state variables
-        if "lat" not in st.session_state:
-            st.session_state.lat = default_lat
-        if "lon" not in st.session_state:
-            st.session_state.lon = default_lon
-        m = folium.Map(
-            location=[st.session_state.lat, st.session_state.lon], zoom_start=4
-        )
-        folium.Marker([st.session_state.lat, st.session_state.lon]).add_to(m)
+        with tab1:
+            # Initialize session state variables
+            if "lat" not in st.session_state:
+                st.session_state.lat = default_lat
+            if "lon" not in st.session_state:
+                st.session_state.lon = default_lon
+            m = folium.Map(
+                location=[st.session_state.lat, st.session_state.lon], zoom_start=10
+            )
+            folium.Marker([st.session_state.lat, st.session_state.lon]).add_to(m)
 
-        st_data = st_folium(m, width=600, height=350)
+            st_data = st_folium(m, width=600, height=350)
 
-        try:
-            st.session_state.lat = st_data["last_clicked"]["lat"]
-            st.session_state.lon = st_data["last_clicked"]["lng"]
-        except:
-            print("mistake")
+            try:
+                st.session_state.lat = st_data["last_clicked"]["lat"]
+                st.session_state.lon = st_data["last_clicked"]["lng"]
+            except:
+                print("mistake")
 
-        lc_lat = st.session_state.lat
-        lc_long = st.session_state.lon
+            lc_lat = st.session_state.lat
+            lc_long = st.session_state.lon
 
         with st.form(key="my_form"):
             rating = st.selectbox(
@@ -421,11 +423,10 @@ elif tabs == "Modelos":
 
                 df_tiendas_recomendadas = pd.DataFrame(tiendas_dict)
 
-                tab1, tab2 = st.columns(2, gap="small")
                 # Mostrar el DataFrame en Streamlit
-                with tab2:
+                with tab3:
                     st.dataframe(df_tiendas_recomendadas)
-                with tab1:
+                with tab2:
                     mostrar_mapa(tiendas_dict)
             except Exception as e:
                 st.error(f"Error: {e}")
