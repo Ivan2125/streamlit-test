@@ -293,17 +293,17 @@ elif tabs == "Modelos":
     st.header("Modelos de Machine Learning 🤖", divider="rainbow")
     st.header("Recomendación de tiendas Walgreens 🏪")
     st.subheader(
-        "🎯 Este apartado te permite encontrar la ubicación de las mejores tiendas de Walgreens basados en su ubicación y reseñas positivas."
+        "🎯 Este apartado te permite encontrar la ubicación de las tiendas de Walgreens basados en su ubicación y rating de reseñas ."
     )
     with st.expander(_("¿Cómo usar?")):
         st.markdown(
             _(
                 """
         Ejemplo de uso:
-        - Haz doble click en el mapa
-        -Ingresa el nombre de la ciudad, ejemplo: "Los Angeles".
+        - Haz doble click en el mapa del lugar que deseas consultar.
+        - Selecciona el número de rating (⭐) que buscas
         - Da click en el botón "Enviar".
-        - Visualiza las ubicaciones de las mejores tiendas de Walgreens.
+        - Visualiza las ubicaciones más cercanas de acuerdo a el punto elegido y su rating.
         """
             )
         )
